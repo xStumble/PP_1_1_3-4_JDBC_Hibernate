@@ -16,6 +16,7 @@ public class Util {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String connectionUrl = "jdbc:mysql://" + hostName + ":3306/" + dbName;
             connection = DriverManager.getConnection(connectionUrl, userName, password);
+            connection.setAutoCommit(false);
         }
 
         return connection;
